@@ -6,10 +6,8 @@ const PostSchema = new mongoose.Schema({
     estado: String,
     ciudad: String,
     descripcion:String,
-    image:String,
-    categoria:[{
-        type: String
-    }],
+    categoria:String,
+	image:String,
     createdAt: {
         type: Date,
         default: new Date()
