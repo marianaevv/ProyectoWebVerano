@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+              <%for (var i=0; i< users.length;i++){%>
+              <div class="post-preview">
+                <a href="/post/post._id">
+                  <h2 class="post-title">
+                    <%= users[i].username %>
+                  </h2>
+                </a>
+                <p class="post-meta">Email
+                  <a href="#"><%= users[i].email %></a>
+                </p>
+                <a href=/deleteUser/<%= users[i]._id %>   class="btn btn-danger" href="turn">Delete </a>   
+              </div>
+              <hr>
+          <%}%></hr>
+</body>
+</html>

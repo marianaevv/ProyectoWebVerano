@@ -1,30 +1,28 @@
 {
-  "name": "proyectofinalweb",
+  "name": "v3proyectoweb",
   "version": "1.0.0",
-  "description": "Aplicación para publicar lugares turísticos.",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "devStart": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marianaevv/ProyectoWebVerano.git"
-  },
-  "author": "Mariana Villegas - Diego Montaño",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/marianaevv/ProyectoWebVerano/issues"
-  },
-  "homepage": "https://github.com/marianaevv/ProyectoWebVerano#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "bcrypt": "^5.0.0",
+    "connect-mongo": "^3.2.0",
+    "ejs": "^3.1.3",
     "express": "^4.17.1",
-    "json-parser": "^3.1.2",
-    "mongoose": "^5.9.23",
-    "morgan": "^1.10.0"
+    "express-fileupload": "^1.1.7-alpha.4",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.25",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.4"
   }
 }
