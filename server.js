@@ -25,6 +25,11 @@ const editPostController = require('./controllers/editPost');
 const getAllUsers = require('./controllers/getAllUsers');
 const deleteUserController = require('./controllers/deleteUser');
 const getPostController = require('./controllers/getPostById');
+const homePageAdminController = require('./controllers/homePageAdmin');
+const getRecreacionalPosts = require('./controllers/getRecreacionalPosts');
+const getNightPost = require('./controllers/getNightPost');
+const getNaturePost = require('./controllers/getNaturePost');
+const categoriasPageController = require('./controllers/categoriesPage');
 //const getUserPostsController = require('./controllers/logout');
 //const loadMisPublicaciones = require('./controllers/misPublicaciones');
 
@@ -44,12 +49,14 @@ app.use(function(req, res,next){
     res.locals.auth = req.session.userId;
     next()
 }) 
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
 app.get("/", homePageController);
+app.get("/admin", homePageAdminController);
 app.get("/post/:id", getPostController);
 app.get("/createPost",auth, createPostController);
 app.post("/posts/store/:id",auth, storePostController);
@@ -66,6 +73,11 @@ app.post('/edit/:id', editPostController);
 app.get('/allUsers', getAllUsers);
 app.get('/deleteUser/:id',deleteUserController);
 app.get('/allPosts', getAllPosts);
+app.get('/postsRecreacionales', getRecreacionalPosts);
+app.get('/postsNaturaleza', getNaturePost);
+app.get('/postsNoche', getNightPost);
+app.get('/categorias', categoriasPageController);
+
 //DB CONNECTION
 app.listen( 8080, () => {
     console.log( 'Sever on port ', 8080);

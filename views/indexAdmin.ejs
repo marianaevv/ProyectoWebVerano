@@ -13,6 +13,7 @@
  
 <body>
   <!-- Navigation -->
+  <h1>SOY EL ADMIIIIN</h1>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -21,7 +22,7 @@
     <a class="nav-link" href="/">Inicio</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/categorias">Categorías</a>
+    <a class="nav-link" href="#">Categorías</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Nosotros</a>
@@ -35,14 +36,11 @@
               </li>
           <% } else{ %>  
            <li class="nav-item">
-                <a class="nav-link" href="/createPost">New Post</a>
+                <a class="nav-link" href="/allUsers">Usuarios</a>
               </li> 
               <li class="nav-item">
                 <a class="nav-link" href="/auth/logout">Logout</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/misPublicaciones">Mis publicaciones</a>
-              </li>        
+              </li>     
                 <hr>  
          <% } %>
 
@@ -66,25 +64,6 @@
   </header>
   
  
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-        <%for (var i=0; i< posts.length;i++){%>
-        <div class="post-preview">
-          <a href="/post/post._id">
-            <h2 class="post-title">
-              <%= posts[i].lugar %>
-            </h2>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#"><%= posts[i].pais %></a>
-          </p>
-          <p class="post-meta">Estado
-            <a href="#"><%= posts[i].estado %></a>
-          </p>
-        </div>
-        <hr>
-    <%}%>
     
       
         <div class="clearfix">
