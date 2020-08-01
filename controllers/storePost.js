@@ -3,28 +3,26 @@ const Post = require('../models/postModel')
 const User = require('../models/userModel');
 module.exports = async (req, res, next) => {
     try{
-const {
-        image
-    } = req.files
-    const userId = req.params.id;
-    const user = await User.findById(userId);
-    const newPost = new Post(req.body);
-    newPost.owner = user;
-    image.mv(path.resolve(__dirname, '..', 'public/posts', image.name), (error) => {
-        newPost.save({
-            ...req.body,
-            image: `/posts/${image.name}`
-        }, (error, post) => {
-            res.redirect("/");
-        });
-    })
-    user.posts.push(newPost)
-    await user.save();
-    res.redirect('/')
+        const userId = req.params.id;
+        const user = await User.findById(userId);
+        const {image} = req.files
+        const newPost = new Post(req.body);
+        //newPost.owner = user;
+        image.mv(path.resolve(__dirname, '..', 'public/posts', image.name), (error) => {
+            Post.create({
+                ...req.body,
+                owner: user,
+                image: `/posts/${image.name}`
+            }, (error, post) => {
+                res.redirect("/");
+            });
+        })
+        user.posts.push(newPost)
+        await user.save();
+        res.redirect('/')
     }catch(err){
         next(err);
     }
-    
 }/*
 const Post = require('../database/models/postModel')
 
