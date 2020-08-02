@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+ 
+  <title>Home Page</title>
+</head>
+ 
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="/">Inicio</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/categorias">Categorías</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Nosotros</a>
+  </li>
+        <% if(!auth){ %>
+            <li class="nav-item">
+                <a class="nav-link" href="/auth/login">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/auth/register">Registrarme</a>
+              </li>
+          <% } else{ %>  
+           <li class="nav-item">
+                <a class="nav-link" href="/createPost">New Post</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="/auth/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/misPublicaciones">Mis publicaciones</a>
+              </li>        
+                <hr>  
+         <% } %>
+
+</ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Clean Blog</h1>
+            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <%for (var i=0; i< posts.length;i++){%>
+        <div class="post-preview">
+          <a href="/post/post._id">
+            <h2 class="post-title">
+              <%= posts[i].lugar %>
+            </h2>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#"><%= posts[i].pais %></a>
+          </p>
+          <p class="post-meta">Estado
+            <a href="#"><%= posts[i].estado %></a>
+          </p>
+          <img src="<%= posts[i].image %>"  width="500" height="600">
+        </div>
+        <hr>
+    <%}%>
+    
+      
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <hr>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+ 
+</html>
