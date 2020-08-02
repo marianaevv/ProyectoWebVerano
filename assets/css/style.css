@@ -1,0 +1,37 @@
+
+.nav-pills > li > a.active {
+        background-color:#28a745!important;
+}
+.nav-link {
+    color: black;
+    font-weight: bold;
+}
+
+.bg-dark{
+    background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url(../img/forest.jpg)no-repeat;
+    /*<span>Photo by <a href="https://unsplash.com/@mitchures?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mitchell Hollander</a> on <a href="https://unsplash.com/s/photos/forrest?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>*/
+    background-size: auto; 
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#28a745 ;
+    color: white;
+    text-align: center;
+} 
+
+.img-responsive {
+    width: auto;
+    height: 200px;
+}
+
+
+.form-group > input {
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #28a745;
+}
+
