@@ -30,6 +30,7 @@ const getRecreacionalPosts = require('./controllers/getRecreacionalPosts');
 const getNightPost = require('./controllers/getNightPost');
 const getNaturePost = require('./controllers/getNaturePost');
 const categoriasPageController = require('./controllers/categoriesPage');
+const searchController = require('./controllers/search')
 //const getUserPostsController = require('./controllers/logout');
 //const loadMisPublicaciones = require('./controllers/misPublicaciones');
 
@@ -77,7 +78,7 @@ app.get('/postsRecreacionales', getRecreacionalPosts);
 app.get('/postsNaturaleza', getNaturePost);
 app.get('/postsNoche', getNightPost);
 app.get('/categorias', categoriasPageController);
-
+app.get('/search', searchController);
 //DB CONNECTION
 app.listen( 8080, () => {
     console.log( 'Sever on port ', 8080);
