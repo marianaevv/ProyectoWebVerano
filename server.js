@@ -31,6 +31,7 @@ const getNightPost = require('./controllers/getNightPost');
 const getNaturePost = require('./controllers/getNaturePost');
 const categoriasPageController = require('./controllers/categoriesPage');
 const searchController = require('./controllers/search');
+const searchAdminController = require('./controllers/searchAdmin');
 const aboutUsController = require('./controllers/aboutUs');
 const deletePostAdminController = require('./controllers/deletePostAdmin');
 const app = new express();
@@ -63,7 +64,6 @@ app.use(bodyParser.urlencoded({
 //Static file path to images folder
 app.use(express.static(__dirname+'/assets'));
 
-
 app.get("/", homePageController);
 app.get("/admin", homePageAdminController);
 app.get("/post/:id", getPostController);
@@ -89,6 +89,7 @@ app.get('/categorias', categoriasPageController);
 app.get('/search', searchController);
 app.get('/nosotros',aboutUsController);
 app.get('/deletePostAdmin/:id', deletePostAdminController);
+app.get('/searchAdmin', searchAdminController);
 //DB CONNECTION
 app.listen( 8080, () => {
     console.log( 'Sever on port ', 8080);

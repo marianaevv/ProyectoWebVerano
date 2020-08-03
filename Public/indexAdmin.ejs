@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!--Own sytlesheet-->
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!--Own sytlesheet-->
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
 <body>
   <!--Page -Header-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-around clearfix">
@@ -32,7 +32,7 @@
      
     </ul>
     <!--Search Bar-->
-    <form class="form-inline p-3"action="/search" method="get" >
+    <form class="form-inline p-3"action="/searchAdmin" method="get" >
       <input class="form-control mr-sm-2" type="text" name="search" placeholder="Buscar.." id="searchInput">
       <button class="btn btn-success" type="submit" name="submit" id="btnSearch" href="#">Buscar</button>
     </form>
@@ -43,48 +43,48 @@
         <!--Sign in End-->
     <% } else { %>
         <!---Log Out Option-->
+        <p style="color:white" >Hola Administrador</p>
         <a class="btn btn-danger" id="logOutButton" href="/auth/logout">Cerrar sesión</a>
         <!--Log Out End-->
         
     <% } %>
   </nav>
  
+ <!--Content-->
+ <div class="clearfix">
+    <h2 class="mx-auto p-2" style="width: 300px;">
+      <p><em>Viajo, luego existo.</em></p>
+    </h2>
 
-  <!--Content-->
-    <div class="clearfix">
-      <h2 class="mx-auto p-2" style="width: 300px;">
-        <p><em>Viajo, luego existo.</em></p>
-      </h2>
-
-      <div class="row justify-content-md-center align-items-center p-2">
-        <div class="col-md-auto">
-          <div class="container">
-            <a href="#">
-              <img src="/img/San-Miguel-Allende-Guanajuato.jpg" class="img-responsive rounded" alt="SanMigueldeAllende" >
-            </a>
-            <p class="text-center font-weight-bold">San Miguel de Allende</p>
-          </div>
+    <div class="row justify-content-md-center align-items-center p-2">
+      <div class="col-md-auto">
+        <div class="container">
+          <a href="#">
+            <img src="/img/San-Miguel-Allende-Guanajuato.jpg" class="img-responsive rounded" alt="SanMigueldeAllende" >
+          </a>
+          <p class="text-center font-weight-bold">San Miguel de Allende</p>
         </div>
+      </div>
 
-        <div class="col-md-auto">
-          <div class="container">
-            <a href="#">
-              <img  src="/img/mirador-obispado.jpg" class="img-responsive rounded" alt="MiradorObispado">
-            </a>
-            <p class="text-center font-weight-bold">Mirador del Obispado</p>
-          </div>
+      <div class="col-md-auto">
+        <div class="container">
+          <a href="#">
+            <img  src="/img/mirador-obispado.jpg" class="img-responsive rounded" alt="MiradorObispado">
+          </a>
+          <p class="text-center font-weight-bold">Mirador del Obispado</p>
         </div>
+      </div>
 
-        <div class="col-md-auto">
-          <div class="container">
-            <a href="#">
-              <img src="/img/xilitla.jpg" class="img-responsive rounded"  alt="Xilitla">
-            </a>
-            <p class="text-center font-weight-bold">Xilitla</p>
-          </div>
+      <div class="col-md-auto">
+        <div class="container">
+          <a href="#">
+            <img src="/img/xilitla.jpg" class="img-responsive rounded"  alt="Xilitla">
+          </a>
+          <p class="text-center font-weight-bold">Xilitla</p>
         </div>
       </div>
     </div>
+  </div>
 
     <!--Page Footer-->
     <footer>

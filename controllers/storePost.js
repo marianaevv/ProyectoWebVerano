@@ -19,7 +19,7 @@ module.exports = async (req, res, next) => {
         })
         user.posts.push(newPost)
         await user.save();
-        res.redirect('/')
+        res.redirect('/misPublicaciones')
     }catch(err){
         next(err);
     }

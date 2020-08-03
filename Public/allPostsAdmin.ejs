@@ -7,7 +7,7 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--Own sytlesheet-->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <!--Page -Header-->
@@ -32,7 +32,7 @@
      
     </ul>
     <!--Search Bar-->
-    <form class="form-inline p-3"action="/search" method="get" >
+    <form class="form-inline p-3"action="/searchAdmin" method="get" >
       <input class="form-control mr-sm-2" type="text" name="search" placeholder="Buscar.." id="searchInput">
       <button class="btn btn-success" type="submit" name="submit" id="btnSearch" href="#">Buscar</button>
     </form>
@@ -42,6 +42,7 @@
       <!--  <button class="btn btn-success"  href="index.html" id="signinButton" type="submit">Iniciar Sesión</button>-->
         <!--Sign in End-->
     <% } else { %>
+        <p style="color:white" >Hola Administrador</p>
         <!---Log Out Option-->
         <a class="btn btn-danger" id="logOutButton" href="/auth/logout">Cerrar sesión</a>
         <!--Log Out End-->
@@ -73,8 +74,8 @@
               <p class="post-meta">Descripción
                 <a href="#"><%= posts[i].descripcion %></a>
               </p>
-              <p><%= posts[i].image%></p>
-              <img src="<%= posts[i].image%>">
+              <img src="<%= posts[i].image%>" width="400px" height="300px">
+              <hr>
           <a href=/deletePostAdmin/<%= posts[i]._id %>   class="btn btn-danger" href="turn">Delete </a>   
         </div>
         <hr>

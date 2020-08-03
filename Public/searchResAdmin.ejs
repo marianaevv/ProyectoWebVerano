@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busqueda</title>
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!--Own sytlesheet-->
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!--Own sytlesheet-->
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
 <body>
   <!--Page -Header-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-around clearfix">
     <!--ViajeroSum Logo -->
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="#">
       <img src="/img/ViajeroSUMremovebg.png" alt="logo" style="width:100px;">
     </a>
     <!-- Links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link btn-outline-success active" href="/">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/categorias">Categorías</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/nosotros">Nosotros</a>
+        <a class="nav-link btn-outline-success active" href="/admin">Inicio</a>
       </li>
       <% if(auth){ %>
         <li class="nav-item">
-            <a class="nav-link"  href="/misPublicaciones">Mis Publicaciónes</a>
+            <a class="nav-link"  href="/allUsers">Usuarios</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  href="/allPosts">Publicaciones</a>
         </li>
       <% } %>
      
@@ -40,18 +37,18 @@
       <button class="btn btn-success" type="submit" name="submit" id="btnSearch" href="#">Buscar</button>
     </form>
     <% if(!auth){ %>
-      <!---Sign in Option-->
-      <a class="btn btn-success"  href="/auth/login">Iniciar sesión</a>
-    <!--  <button class="btn btn-success"  href="index.html" id="signinButton" type="submit">Iniciar Sesión</button>-->
-      <!--Sign in End-->
-  <% } else { %>
-    <a class="btn btn-danger"  href="/createPost">Crear Post</a>
-    <!---Log Out Option-->
-    <a class="btn btn-danger" id="logOutButton" href="/auth/logout">Cerrar sesión</a>
-      <!--Log Out End-->
-      
-  <% } %>
+        <!---Sign in Option-->
+        <a class="btn btn-success"  href="/auth/login">Iniciar sesión</a>
+      <!--  <button class="btn btn-success"  href="index.html" id="signinButton" type="submit">Iniciar Sesión</button>-->
+        <!--Sign in End-->
+    <% } else { %>
+        <!---Log Out Option-->
+        <a class="btn btn-danger" id="logOutButton" href="/auth/logout">Cerrar sesión</a>
+        <!--Log Out End-->
+        
+    <% } %>
   </nav>
+ 
   <header class="masthead" style="background-image: url('img/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
@@ -94,21 +91,20 @@
           <hr>
       <%}%>
     </hr>
-      
         <div class="clearfix">
           <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
         </div>
       </div>
     </div>
   </div>
-   
   <hr>
 
 
+
+    <!--Bootstrap Scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
-
- 
-
 </body>
- 
 </html>
