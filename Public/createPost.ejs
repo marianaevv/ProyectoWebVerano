@@ -12,47 +12,53 @@
 <body>
 
     <div class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center clearfix">
-        <img src="/assets/img/ViajeroSUMremovebg.png" alt="logo" style="width:140px;">
+        <img src="/img/ViajeroSUMremovebg.png" alt="logo" style="width:140px;">
     </div>
 
     <div class="row">
         <div class="column  col-lg-4 mx-auto p-4">
             <div class="border-5 border-info rounded p-3">
 
-            <form>
-                <div class="form-row">
-                    <label class="font-weight-bold text-success" for="inputLugar">Lugar</label>
-                    <input type="text" class="form-control" id="inputLugar" placeholder="">
-                </div>
-                <div class="form-row ">
-                    <div class="form-group col-md-4">
-                      <label class="font-weight-bold text-success" for="inputPais">País</label>
-                      <input type="text" class="form-control" id="inputPais">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label class="font-weight-bold text-success" for="inputEstado">Estado</label>
-                      <input type="text" class="form-control" id="inputEstao">
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label class="font-weight-bold text-success" for="inputCiudad">Ciudad</label>
-                      <input type="text" class="form-control" id="inputCiudad">
-                    </div>
-                  </div>
-                <div class="form-row">
-                    <label class="font-weight-bold text-success" for="descripcionPost">Descripción</label>
-                    <textarea class="form-control" id="descripcionPost" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-bold text-success" for="filePhoto">Añadir foto del lugar</label>
-                    <input type="file" class="form-control-file" id="filePhoto">
-                  </div>
-              </form>
-              <div class="form-row justify-content-around">
-                <button type="submit" class="btn btn-danger">Cancelar</button>
-                <button type="submit" class="btn btn-success">Públicar</button>
-              </div>
-            </div>
-        </div>
+ <form action="/posts/store/<%=userId%>" method="POST" encType="multipart/form-data">
+  <div class="form-row">
+    <label class="font-weight-bold text-success" for="inputLugar">Lugar</label>
+    <input type="text" class="form-control" id="inputLugar" name="lugar" placeholder="">
+</div>
+<div class="form-row ">
+    <div class="form-group col-md-4">
+      <label class="font-weight-bold text-success" for="inputPais">País</label>
+      <input type="text" name="pais" class="form-control" id="inputPais">
+    </div>
+    <div class="form-group col-md-4">
+      <label class="font-weight-bold text-success" for="inputEstado">Estado</label>
+      <input type="text" name="estado" class="form-control" id="inputEstao">
+    </div>
+    <div class="form-group col-md-4">
+      <label class="font-weight-bold text-success" for="inputCiudad">Ciudad</label>
+      <input type="text" class="form-control"name="ciudad" id="inputCiudad">
+    </div>
+  </div>
+  <div class="form-row">
+    <label class="font-weight-bold text-success" for="descripcionPost">Descripción</label>
+    <textarea class="form-control" id="descripcionPost" name="descripcion"rows="3"></textarea>
+</div>
+<div class="form-row">
+  <label class="font-weight-bold text-success" for="inputLugar">Categorias</label>
+  <input type="text" class="form-control" id="inputLugar" name="categoria" placeholder="">
+</div>
+<div class="form-group mt-3">
+  <input type="file" name="image" class="form-control-file">
+</div>
+<div class="form-group my-4 text-center">
+   <button class="btn btn-primary">Create Post</button>
+ </div>
+</form>
+ 
+ <div class="form-group my-4 text-center"><a href="/">
+<button type="submit" class="btn btn-danger">Cancelar</button>
+</a></div>
+  </div>
+</div>
     </div>
 
     <!--Bootstrap Scripts-->

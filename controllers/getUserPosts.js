@@ -9,7 +9,7 @@ module.exports = async (req, res)=>{
     //const userPosts = await Post.findById(onepost);
     const posts = await Post.find({owner: user._id});
    // const posts = JSON.parse(JSON.stringify(postss));
-    res.render("misPublicaciones",{posts});
+    res.render("myPosts",{posts});
     //const posts = user.posts;
 }
 

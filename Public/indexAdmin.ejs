@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Administrador</title>
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--Own sytlesheet-->
@@ -27,12 +27,14 @@
       <li class="nav-item">
         <a class="nav-link" href="/nosotros">Nosotros</a>
       </li>
-        <% if(auth){ %>
-            <li class="nav-item">
-            <a class="nav-link"  href="/misPublicaciones">Mis Publicaciónes</a>
-            </li>
-        <%}%>
-      
+      <% if(auth){ %>
+        <li class="nav-item">
+            <a class="nav-link"  href="/allUsers">Usuarios</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  href="/allPosts">Publicaciones</a>
+        </li>
+      <% } %>
      
     </ul>
     <!--Search Bar-->
@@ -46,15 +48,11 @@
       <!--  <button class="btn btn-success"  href="index.html" id="signinButton" type="submit">Iniciar Sesión</button>-->
         <!--Sign in End-->
     <% } else { %>
-       
-        <a class="btn btn-danger"  href="/createPost">Crear Post</a>
         <!---Log Out Option-->
         <a class="btn btn-danger" id="logOutButton" href="/auth/logout">Cerrar sesión</a>
         <!--Log Out End-->
         
     <% } %>
-
-
   </nav>
  
 

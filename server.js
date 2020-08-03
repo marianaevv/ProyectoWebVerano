@@ -32,7 +32,7 @@ const getNaturePost = require('./controllers/getNaturePost');
 const categoriasPageController = require('./controllers/categoriesPage');
 const searchController = require('./controllers/search');
 const aboutUsController = require('./controllers/aboutUs');
-
+const deletePostAdminController = require('./controllers/deletePostAdmin');
 const app = new express();
 
 const mongoStore = connectMongo(expressSession);
@@ -48,6 +48,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/Public'));
 app.use(function(req, res,next){
     res.locals.auth = req.session.userId;
+    next()
+}) 
+app.use(function(req, res,next){
+    res.locals.authAdmin ="5f21031775426a4aa86a224b"   
     next()
 }) 
 
@@ -83,6 +87,7 @@ app.get('/postsNoche', getNightPost);
 app.get('/categorias', categoriasPageController);
 app.get('/search', searchController);
 app.get('/nosotros',aboutUsController);
+app.get('/deletePostAdmin/:id', deletePostAdminController);
 //DB CONNECTION
 app.listen( 8080, () => {
     console.log( 'Sever on port ', 8080);
