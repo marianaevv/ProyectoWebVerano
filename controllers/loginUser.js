@@ -18,7 +18,7 @@ module.exports = (req,res)=>{
                         res.redirect('/admin');
                     }else{
                         req.session.userId = user._id
-                        res.redirect('/')
+                        res.redirect('/auth/login')
                     }
             
                 } else {
