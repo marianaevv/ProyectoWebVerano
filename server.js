@@ -59,6 +59,7 @@ app.use(bodyParser.urlencoded({
 //Static file path to images folder
 app.use(express.static(__dirname+'/assets'));
 
+
 app.get("/", homePageController);
 app.get("/admin", homePageAdminController);
 app.get("/post/:id", getPostController);

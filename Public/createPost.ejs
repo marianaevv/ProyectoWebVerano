@@ -7,12 +7,14 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--Own sytlesheet-->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
     <div class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center clearfix">
-        <img src="/assets/img/ViajeroSUMremovebg.png" alt="logo" style="width:140px;">
+        <a href="/">
+        <img src="/img/ViajeroSUMremovebg.png" alt="logo" style="width:140px;">
+        </a>
     </div>
 
     <div class="row">
@@ -38,6 +40,14 @@
                       <input type="text" class="form-control" id="inputCiudad">
                     </div>
                   </div>
+                  <div class="form-row">
+                      <label class="font-weight-bold text-success" for>Categoría</label>
+                      <select type="text" name="categoria" id="categoria" class="form-control">
+                        <option>Naturaleza</option>
+                        <option>Vida de Noche</option>
+                        <option>Recreacional</option>
+                      </select>
+                  </div>
                 <div class="form-row">
                     <label class="font-weight-bold text-success" for="descripcionPost">Descripción</label>
                     <textarea class="form-control" id="descripcionPost" rows="3"></textarea>
@@ -48,7 +58,9 @@
                   </div>
               </form>
               <div class="form-row justify-content-around">
+                <a href="/">
                 <button type="submit" class="btn btn-danger">Cancelar</button>
+                </a>
                 <button type="submit" class="btn btn-success">Públicar</button>
               </div>
             </div>
