@@ -30,9 +30,8 @@ const getRecreacionalPosts = require('./controllers/getRecreacionalPosts');
 const getNightPost = require('./controllers/getNightPost');
 const getNaturePost = require('./controllers/getNaturePost');
 const categoriasPageController = require('./controllers/categoriesPage');
-const searchController = require('./controllers/search')
-//const getUserPostsController = require('./controllers/logout');
-//const loadMisPublicaciones = require('./controllers/misPublicaciones');
+const searchController = require('./controllers/search');
+const aboutUsController = require('./controllers/aboutUs');
 
 const app = new express();
 
@@ -46,6 +45,7 @@ app.use(expressSession({
 }));
 app.use(fileUpload());
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/Public'));
 app.use(function(req, res,next){
     res.locals.auth = req.session.userId;
     next()
@@ -82,6 +82,7 @@ app.get('/postsNaturaleza', getNaturePost);
 app.get('/postsNoche', getNightPost);
 app.get('/categorias', categoriasPageController);
 app.get('/search', searchController);
+app.get('/nosotros',aboutUsController);
 //DB CONNECTION
 app.listen( 8080, () => {
     console.log( 'Sever on port ', 8080);

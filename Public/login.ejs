@@ -20,21 +20,25 @@
             <div class="form-row justify-content-around">
                 <h4 class="text-center font-italic">Viajamos para cambiar, no de lugar, sino de ideas</h4>
             </div>
-            <form>
+
+            <form action="/users/login" method="POST">
                 <div class="form-group">
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Correo Electrónico">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required>
                 </div>
                 <div class="form-group">
-                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
                 </div>
-            </form>
-            <div class="form-row justify-content-around">
-                <button type="submit" class="btn btn-success">Iniciar Sesión</button>
-            </div>
-            <p class="text-center font-weight-bold p-4">¿Aún no te registras? <a href="/Public/register.html">
-                Registrate 
-              </a> </p>
-        </div>
+                <div class="form-row justify-content-around">
+                <button type="submit"class="btn btn-success">Login</button>
+                </div>
+                <p class="text-center font-weight-bold p-4">¿Aún no te registras? <a href="/auth/register">
+                    Registrate 
+                  </a> </p>
+            </form>          
+
+            
     </div>
 
     <!--Bootstrap Scripts-->

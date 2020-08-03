@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
         const {image} = req.files
         const newPost = new Post(req.body);
         //newPost.owner = user;
-        image.mv(path.resolve(__dirname, '..', 'public/posts', image.name), (error) => {
+        image.mv(path.resolve(__dirname, '..', 'assets/posts', image.name), (error) => {
             Post.create({
                 ...req.body,
                 owner: user,

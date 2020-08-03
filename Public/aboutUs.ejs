@@ -7,44 +7,51 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--Own sytlesheet-->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/asets/css/style.css">
 </head>
-<body>
-  <!--Page -Header-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-around clearfix">
-    <!--ViajeroSum Logo -->
-    <a class="navbar-brand" href="#">
-      <img src="/assets/img/ViajeroSUMremovebg.png" alt="logo" style="width:100px;">
-    </a>
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/Public/home.html">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/Public/category.html">Categorías</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link btn-outline-success active" href="/Public/aboutUs.html">Nosotros</a>
-      </li>
-     
-    </ul>
-    <!--Search Bar-->
-    <form class="form-inline p-3" action="/action_page.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="Buscar..">
-      <button class="btn btn-success" type="submit">Buscar</button>
-    </form>
-    <% if(!auth){ %>
-        <!---Sign in Option-->
-        <button class="btn btn-success" id="signinButton" type="submit">Iniciar Sesión</button>
-        <!--Sign in End-->
-    <% } else { %>
-        <!---Log Out Option-->
-        <button class="btn btn-danger" id="logOutButton" type="submit">Cerrar Sesión</button>
-        <!--Log Out End-->
-    <% } %>
-  </nav>
-
+    <body>
+        <!--Page -Header-->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-around clearfix">
+          <!--ViajeroSum Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="/img/ViajeroSUMremovebg.png" alt="logo" style="width:100px;">
+          </a>
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categorias">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn-outline-success active" href="/nosotros">Nosotros</a>
+            </li>
+            <% if(auth){ %>
+              <li class="nav-item">
+                  <a class="nav-link"  href="/misPublicaciones">Mis Publicaciónes</a>
+              </li>
+            <% } %>
+           
+          </ul>
+          <!--Search Bar-->
+          <form class="form-inline p-3"action="/search" method="get" >
+            <input class="form-control mr-sm-2" type="text" name="search" placeholder="Buscar.." id="searchInput">
+            <button class="btn btn-success" type="submit" name="submit" id="btnSearch" href="#">Buscar</button>
+          </form>
+          <% if(!auth){ %>
+            <!---Sign in Option-->
+            <a class="btn btn-success"  href="/auth/login">Iniciar sesión</a>
+          <!--  <button class="btn btn-success"  href="index.html" id="signinButton" type="submit">Iniciar Sesión</button>-->
+            <!--Sign in End-->
+        <% } else { %>
+          <a class="btn btn-danger"  href="/createPost">Crear Post</a>
+          <!---Log Out Option-->
+          <a class="btn btn-danger" id="logOutButton" href="/auth/logout">Cerrar sesión</a>
+            <!--Log Out End-->
+            
+        <% } %>
+        </nav>
 
   <!--Content-->
     <div class="clearfix">
@@ -62,7 +69,7 @@
             </div>
             <div class="col-md-auto">
                 <div class="container">
-                    <img  src="/assets/img/ViajeroSUMremovebg.png" alt="Logo" style="height: 300px;width: 300px;">
+                    <img  src="/img/ViajeroSUMremovebg.png" alt="Logo" style="height: 300px;width: 300px;">
                 </div>
             </div>
         </div>
