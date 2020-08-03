@@ -5,7 +5,7 @@ module.exports = (req, res) => {
         if (error) {
             return res.redirect('/auth/register')
         }
-        res.redirect('/')
+        res.redirect('/auth/login')
     })
 }
 /*
