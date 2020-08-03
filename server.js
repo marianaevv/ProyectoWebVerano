@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const expressSession = require('express-session');
 const connectMongo = require('connect-mongo');
 const fileUpload = require('express-fileupload');
+const { PORT } = require('./config');
+const {DATABASE_URL} = require('./config');
 const auth = require("./middleware/auth");
 const redirectIfAuthenticated = require('./middleware/redirectIfAuthenticated');
 
@@ -91,9 +93,8 @@ app.get('/nosotros',aboutUsController);
 app.get('/deletePostAdmin/:id', deletePostAdminController);
 app.get('/searchAdmin', searchAdminController);
 //DB CONNECTION
-app.listen( 8080, () => {
-    console.log( 'Sever on port ', 8080);
-
+app.listen( PORT, () => {
+    console.log( 'Sever on port ', PORT  );
     const settings = {
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
@@ -101,7 +102,7 @@ app.listen( 8080, () => {
     };
 
     new Promise( (resolve, reject) => {
-        mongoose.connect( 'mongodb+srv://admin:admin1996@cluster0.vmukv.mongodb.net/viaergosumdb?retryWrites=true&w=majority', settings, ( err ) => {
+        mongoose.connect( DATABASE_URL, settings, ( err ) => {
             if ( err ){
                 reject( err );
             }
