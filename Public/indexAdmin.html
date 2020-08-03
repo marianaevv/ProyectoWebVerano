@@ -27,6 +27,14 @@
       <li class="nav-item">
         <a class="nav-link" href="/Public/aboutUs.html">Nosotros</a>
       </li>
+      <% if(auth){ %>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Mis Publicaciónes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/allUsers">Usuarios</a>
+        </li> 
+      <% } %>
      
     </ul>
     <!--Search Bar-->
@@ -34,11 +42,17 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Buscar..">
       <button class="btn btn-success" id="searchButton" type="submit">Buscar</button>
     </form>
-    <!---Sign in Option-->
-    <button class="btn btn-success" id="searchButton" type="submit">Iniciar Sesión</button>
-    <!--Sign in End-->
+    <% if(!auth){ %>
+        <!---Sign in Option-->
+        <button class="btn btn-success" id="signinButton" type="submit">Iniciar Sesión</button>
+        <!--Sign in End-->
+    <% } else { %>
+        <!---Log Out Option-->
+        <button class="btn btn-danger" id="logOutButton" type="submit">Cerrar Sesión</button>
+        <!--Log Out End-->
+    <% } %>
   </nav>
-
+ 
 
   <!--Content-->
     <div class="clearfix">
