@@ -19,11 +19,11 @@
     <!-- Links -->
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link btn-outline-success active" href="/admin">Inicio</a>
+        <a class="nav-link" href="/admin">Inicio</a>
       </li>
       <% if(auth){ %>
         <li class="nav-item">
-            <a class="nav-link"  href="/allUsers">Usuarios</a>
+            <a class="nav-link btn-outline-success active"  href="/allUsers">Usuarios</a>
         </li>
         <li class="nav-item">
             <a class="nav-link"  href="/allPosts">Publicaciones</a>
@@ -52,44 +52,64 @@
 
   <!--Content-->
     <div class="clearfix">
-      <h2 class="mx-auto p-2" style="width: 300px;">
-        <p><em>Viajo, luego existo.</em></p>
+      <h2 class="mx-auto p-2" style="width: 150px;">
+        <p class="font-weight-bold text-center"><em>Lista de Usuarios</em></p>
       </h2>
-
-      <div class="row justify-content-md-center align-items-center p-2">
-        <div class="col-md-auto">
-          <div class="container">
-            <a href="#">
-              <img src="/img/San-Miguel-Allende-Guanajuato.jpg" class="img-responsive rounded" alt="SanMigueldeAllende" >
-            </a>
-            <p class="text-center font-weight-bold">San Miguel de Allende</p>
+      <div class="row clearfix justify-content-md-center align-items-center">
+        
+        <div class="col-md-4">
+          <div class="container text-center">
+            <h2 class="font-weight-bold text-success">Usuarios</h2>
           </div>
         </div>
 
-        <div class="col-md-auto">
-          <div class="container">
-            <a href="#">
-              <img  src="/img/mirador-obispado.jpg" class="img-responsive rounded" alt="MiradorObispado">
-            </a>
-            <p class="text-center font-weight-bold">Mirador del Obispado</p>
+        <div class="col-md-4">
+          <div class="container text-center">
+            <h2 class="font-weight-bold text-success">Email</h2>
           </div>
         </div>
 
-        <div class="col-md-auto">
+        <div class="col-md-4">
           <div class="container">
-            <a href="#">
-              <img src="/img/xilitla.jpg" class="img-responsive rounded"  alt="Xilitla">
-            </a>
-            <p class="text-center font-weight-bold">Xilitla</p>
+
           </div>
         </div>
       </div>
+
+      <%for (var i=0; i< users.length;i++){%>
+      <div class="row border clearfix justify-content-md-center align-items-center p-2">
+        
+        <div class="col-md-4">
+          <div class="container text-center">
+            <a href="/post/post._id">
+              <h5 class="post-title">
+                <%= users[i].username %>
+              </h5>
+            </a> 
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="container text-center">
+            <h5 class="post-title">
+              <a href="#"><%= users[i].email %></a>
+            </h5>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="container">
+            <a href=/deleteUser/<%= users[i]._id %>   class="btn btn-danger" href="turn">Delete </a>  
+          </div>
+        </div>
+      </div>
+      <%}%>
+  
     </div>
 
-    <!--Page Footer-->
-    <footer>
-        <p>©All rights reserved</p>
-    </footer>
+  
+
+ 
 
     <!--Bootstrap Scripts-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
