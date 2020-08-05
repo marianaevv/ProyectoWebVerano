@@ -90,7 +90,7 @@ app.listen( 8080, () => {
     };
 
     new Promise( (resolve, reject) => {
-        mongoose.connect( 'mongodb+srv://admin:admin1996@cluster0.vmukv.mongodb.net/viaergosumdb?retryWrites=true&w=majority', settings, ( err ) => {
+        mongoose.connect( DATABASE_URL, settings, ( err ) => {
             if ( err ){
                 reject( err );
             }
